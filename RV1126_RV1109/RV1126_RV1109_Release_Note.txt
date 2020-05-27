@@ -1,0 +1,4 @@
+===========RV1126/RV1109 Linux SDK Release Note===========
+
+[ rv1126_rv1109_linux_alpha_v0.2_20200515.xml ]
+	- v0.2 alpha version
