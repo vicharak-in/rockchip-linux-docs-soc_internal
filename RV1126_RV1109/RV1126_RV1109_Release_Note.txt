@@ -1,5 +1,219 @@
 ===========RV1126/RV1109 Linux SDK Release Note===========
 
+[ rv1126_rv1109_linux_v1.0.0_20200616.xml ]
+	- v1.0.0 official version
+	rv1126/rv1109 support docs lists
+	docs/Linux/Multimedia/camera/Rockchip_Instruction_Linux_Appliction_ISP20_CN.pdf
+	docs/Linux/Multimedia/Rockchip_Developer_Guide_MPP_CN.pdf
+	docs/Linux/Multimedia/Rockchip_Developer_Guide_MPP_EN.pdf
+	docs/Linux/Multimedia/Rockchip_Instructions_Linux_Rkmedia_CN.pdf
+	docs/Linux/Multimedia/camera/Rockchip_Developer_Guide_ISP20_RkAiq_CN.pdf
+	docs/Linux/Multimedia/camera/Rockchip_User_Manual_Linux_ISP2_CN.pdf
+	docs/Linux/ApplicationNote/Rockchip_Instructions_Linux_Web_Configuration_CN.pdf
+	docs/RV1126_RV1109/Rockchip_RV1126_RV1109_EVB_User_Guide_V1.0_CN.pdf
+	docs/RV1126_RV1109/Rockchip_RV1126_RV1109_EVB_User_Guide_V1.0_EN.pdf
+	docs/RV1126_RV1109/Rockchip_RV1126_RV1109_Linux_SDK_V1.0.0_20200616_CN.pdf
+	docs/RV1126_RV1109/Rockchip_RV1126_RV1109_Linux_SDK_V1.0.0_20200616_EN.pdf
+	docs/RV1126_RV1109/Rockchip_RV1126_RV1109_Quick_Start_Linux_CN.pdf
+	docs/RV1126_RV1109/Rockchip_RV1126_RV1109_Quick_Start_Linux_EN.pdf
+	docs/RV1126_RV1109/RV1109 Multimedia Codec Benchmark v1.1.pdf
+	docs/RV1126_RV1109/RV1126 Multimedia Codec Benchmark v1.1.pdf
+	docs/AVL/RKeMMCSupportList Ver1.50_20200605.pdf
+	docs/AVL/RK SpiNor and  SLC Nand SupportList Ver1.20_2020_0615.pdf
+	docs/AVL/Rockchip_Support_List_DDR_Ver2.43.pdf
+
+changed projects :
+
+	app/dbserver changed from 1ffcb83231880b6250f4d64664268271c0f713aa to master
+		[+] 563289a dbserver: add encoder default para and modify storage plan snap
+		[+] cde884e event: set iTimeThreshold to 0
+		[+] 33f8d8a dbserver:add enable for video-plan
+
+	app/ipcweb-backend changed from e1888224e0986f3b6dbeda927e8051834db3f063 to master
+		[+] 6bc83fc API: add get/set for video plan enabled
+		[+] 3f79bc9 API:add url for encoder default para
+		[+] 3380b66 API: video: solve the problem of sending frame rate every time
+		[+] 9344358 API: Event: Fixup the hidden danger of insufficient length
+		[+] eef7ea5 API: event: add get record status
+
+	app/ipcweb-ng changed from ba20c61e5645963bb187a52a0c3cc709deafa48b to master
+		[+] 7498173 config: modify port page
+		[+] d1beb96 config: add int func and improve login
+		[+] c17d037 config: add enabled for video plan
+		[+] 58be374 config: modify encoder-para
+		[+] 2a11a35 config: improve hard-disk-manage and player-draw-char
+
+	app/libIPCProtocol changed from 3c6eb291bbdb8713bcfcad51a2ad2c39dee26fc8 to master
+		[+] 78aa20f LibIPCProtocol: modify snapshoot plan parse parameter
+		[+] 9a05bad LibIPCProtocol: modify dbserver_face_list_delete
+		[+] 952e921 libIPCProtocol: modify dbus add mediaserver
+		[+] d4628aa libIPCProtocol: modify dbus
+		[+] 0b92e33 LibIPCProtocol: modify rc quality and H264 profile
+		[+] 67f4235 LibIPCProtocol: add set/get func for storage
+		[+] ebaf718 LibIPCProtocol: Fix the crash caused by parse NULL
+		[+] de7731c LibIPCProtocol: Fix multiple escaping issues
+		[+] 255d6ac LibIPCProtocol: mediaserver add get record status function
+
+	app/mediaserver changed from c37b91fbbfc1f8ca6353489502a725611e2cdadd to master
+		[+] 5696830 flow&dbus: add gray scale relate functions
+		[+] 2253ffc utils: modify parameters only call dbus during init and modification
+		[+] 092a2a4 flow&dbus: add sync rtsp/rtmp port num from database
+		[+] d32cb9b Merge "fixup dbus thread cannot exit normally"
+		[+] f3ce401 fixup dbus thread cannot exit normally
+		[+] d154919 conf: rockface detect uses 640x480 image
+		[+] 09d8f02 utils: add event snapshot
+		[+] 4c5e976 conf: compact configuration
+		[+] 75218a6 conf: Sort out UVC related CONF files.
+		[+] 5229e47 add more tip for usage
+		[+] e9049cc fixup : osd mask invalid config with width and height 0
+		[+] 6e92d4a dbus: fixup record_status return type
+		[+] b88066c flow: modify rc quality and H264 profile
+		[+] aeefa91 conf: rockface bodydetect use 320x240 resolution image
+		[+] 1a88878 utils: video plan adds judgment on enabled
+		[+] 4bb5420 Revert "flow: fixup build err for rkmedia key string change"
+		[+] e7b8c3d flow: fixup build err for rkmedia key string change
+		[+] 71b1133 flow: schedules manager add need dbus control
+		[+] f345fde Fix thunderboot config file
+		[+] 685b7ca flow: add frame rate in param when sync datebase
+		[+] 38d5533 dbus: add get record status function
+
+	app/netserver changed from e5eaecc4b0091608abc47e00d8c1d9b203d20420 to master
+		[+] f6e75a3 netserver: fix wifi_scan bug
+
+	app/smart_display_service changed from 60f64526f09aac2ea96243e42b4bc7be59b90ea4 to master
+		[+] 5fc56df Merge "event_handle: change conf position"
+		[+] 128149a event_handle: change conf position
+
+	buildroot changed from 3598444fcea2fab61024de3ff48947b666524474 to rockchip/2018.02-rc3
+		[+] 556b0c1338 rkwifi test: fix wifi on
+		[+] 0360c30830 board: tinyrootfs: remove check rootfs type
+		[+] 92d34ee264 package: retroarch: add retroarch-assets
+		[+] b5b0934636 package: android-tools: add patch to fix static linking
+		[+] 2cc047750c package: android-tools: support rsa authentication via env dynamically
+		[+] 3a38fee47b weston: Fix crash when hotplugging monitors
+		[+] a5a85532fe configs: rockchip_rv1126_rv1109_uvcc: remove eptz_demo
+		[+] 407a3ed85a package: rockchip: fixes mtp compile error
+		[+] e7db912660 weston: pixman-renderer: Fix memory leak with linux dmabuf
+		[+] 2780dfc829 rkmedia: the uvc configuration disrupts the mpp configuration
+		[+] 740086f2fb rockchip_rv1126_rv1109_defconfig: remove ogg
+		[+] fd7cc1f13d board: rv1109: tinyrootfs: fix set HDR_MODE ENV invalid bug
+		[+] 0c74c43910 board: rv1108: fix adbd file path
+		[+] 8a48477559 weston: Avoid page flip and repaint schedule in user freeze mode
+		[+] cf189d5029 board: rv1109: tinyrootfs: add bin iq for os04a10
+		[+] 1d5aa3c9e4 uvc_app : add eptz supprot with rockx
+		[+] 0863f387be live555: fix rtcp rtp-timestamp error.
+		[+] 9b025a4021 configs: rk1806_webserver: add BR2_PACKAGE_DBUS_CPP
+		[+] 76b163a163 package: rockchip: QFacialGate: add depend
+		[+] a7a16c137e configs: px30/rk3326_64: remove meaningless about neon
+		[+] e206d27f99 board: 1806: remove S99mountdata.sh because of ficial_gate bring forward
+
+	buildroot/dl changed from 3bb5717bf722c11457021e1edbe69f2f161ac891 to master
+		[+] d4c2e73 packages: add genromfs mtd-utils and sftpserver
+
+	device/rockchip changed from f7ceca3f3bb253f1d64a08a8261355ffd77704a6 to master
+		[+] b3b5852 Merge "rk3036: add rk3036 retro config"
+		[+] 49d8099 oem_ipc: update prebuilt web applicantion for v0.3.19
+		[+] c9cc82d rk3036: add rk3036 retro config
+		[+] 8bfd3e8 rv1126/rv1109: BoardConfig-uvc: add package file for update.img
+		[+] 40d5dc4 oem_ipc: update prebuilt web applicantion for v0.3.18
+		[+] 8c535db rv1126_rv1109: BoardConfig-uvc.mk: build oem.img on buildroot
+		[+] 7e865ea oem_uvcc:update for eptz.
+		[+] 16e5435 oem_ipc: update prebuilt web applicantion for v0.3.17
+
+	docs changed from cb6b984b6b581734ea9a45ab4152c282f1c1fa31 to master
+		[+] 9f1080c docs: Multimedia: camera: add Rockchip_Instruction_Linux_Appliction_ISP20_CN V1.0.0
+		[+] db61535 AVL: update RK SpiNor and  SLC Nand SupportList Ver1.20_2020_0615.pdf
+		[+] 70e7044 Multimedia: update Rockchip_Developer_Guide_MPP_XX.pdf
+
+	docs/Socs changed from 216cb6b2eb86db927dd3a5d7a8a2e54f1d046394 to master
+		[+] a833e67 RV1126/RV1109: add benchmark docs
+		[+] 1d6d8ba RV1126/RV1109: Release Note update v1.0.0
+		[+] a349092 RV1126_RV1109: Quick Start update v1.1.1 for English Document
+
+	external/camera_engine_rkaiq changed from cd341fc8b5c800ff2f3422ec32e75e9d71e1b858 to master
+		[+] 2c36f2b release v0.1.6
+
+	external/eq_drc_process changed from 5883f1a78f20ba7cad730a78d5cf10587a2979c7 to master
+		[+] 3e1a7c6 eq_drc_process: fix the broken is_mute_frame()
+		[+] ca122d9 eq_drc_process: fix the overrun after filling silence data
+		[+] 2b6f061 fix eq and source communication exception after source disconnect
+
+	external/mpp changed from fb6cdcb9c0776a6bf9d927969cfce8e3f7eac2fc to develop
+		[+] 7b94cd40 [h264d]: fix dpb memory leak
+		[+] 0abeafe8 [cmake]: Add option for Address Sanitizer check
+		[+] c56c0149 [h264d]: Fix heap-use-after-free issue in h264d
+		[+] 81d42481 [mpi_enc_test]: Fix memory leak of test args
+		[+] 0efed5dd [mpp_trie]: Fix memory leak of node and info
+		[+] 46bfafa6 [mpp_enc_v2]: Fix memory leak of header buffer
+		[+] c7274a61 [mpp_enc_v2]: Fix memory leak of rc_ctx
+		[+] 33e7e4c5 [mpi]: Remove unused H.264 mpi cfg structure
+		[+] 7ff73d99 [hal_h265e_vepu541]: Update l2 quant bias to 256
+		[+] 550e2ee6 [mpi]: Remove unused encoder cfg cmd defines
+		[+] bb32442d [mpp_enc_v2]: Fix missing rc update on qp changed
+		[+] 15e569a5 [mpp_enc_v2]: Fix missing resend_hdr on codec changed
+		[+] 27977e2a [vepu_541]: Fix rotation issue
+		[+] c468393e [mpp_enc_v2]: Check resend_hdr must request IDR
+		[+] 48761dbe [m2vd]: fix incorrect packet split problem
+
+	external/rkfacial changed from bc8145a0739a0a1a1a9ef8d643065e1dc683669d to master
+		[+] 3589513 rockface_control_delete check webserver name
+		[+] 80fb1a9 doc: update Rockchip_Instruction_Rkfacial_CN.pdf
+		[+] b3b048e add set camera rotation
+		[+] e5b5071 switch api
+		[+] 3e2b3ee add db_monitor_get_user_info
+		[+] 483a9e7 back-up face_data.db and key.lic
+		[+] 96f0417 dbmonitor check process
+
+	external/rkmedia changed from 1751e2c770c415e6ad5cdeed97f76959b4268d7f to master
+		[+] edac448 stream: camera: add quantization config to select.
+		[+] 5a2a75f rknn: draw filter remove noisy log
+		[+] fe85890 Merge "rknn: update rockface_autotrack interface"
+		[+] 128bc37 Merge "rockx_fliter:"
+		[+] 415c1fc rknn: update rockface_autotrack interface
+		[+] dec00bc Merge "rknn: remove rga buffer for rockface recognition"
+		[+] e6b516b Merge "mpp encoder: support avc profile change"
+		[+] 588da24 Merge "rknn: nn_result_input supports cache image pool"
+		[+] 2b6483c mpp encoder: support avc profile change
+		[+] 22996fd mpp encoder: support rc quality control
+		[+] 1992af3 rknn: remove rga buffer for rockface recognition
+		[+] d7ea048 rknn: nn_result_input supports cache image pool
+		[+] 4d03469 rockx_fliter:
+
+	external/rknpu changed from e19f1f7d3fb1d560a033e60258060ef87c598233 to master
+		[+] a100762 Merge "update NNAPI (base ef9a7dc9)"
+		[+] 8b455ab update NNAPI (base ef9a7dc9)
+
+	external/rkscript changed from e64c9798084668c1514b296808ebbb10d50efa69 to master
+		[+] 385cc8d S50usbdevice: load env from profile
+		[+] ab2810f restart mtp-server since usb cable disconnect
+
+	external/rockface changed from 845a1ebfb459b2a308833022d7945907de2e47a2 to master
+		[+] 57fd72f Merge "update rockface-rv1109-Linux"
+		[+] c09f3de update rockface-rv1109-Linux
+
+	external/uvc_app changed from ca115b521cb3b5e04427d653a631ed73753d1f62 to develop-4.19
+		[+] 2c38a91 camera_control:set V4L2_QUANTIZATION_LIM_RANGE
+		[+] f75e089 adjust jpeg:quant back to 7.
+		[+] 6bd7f24 Merge "uvc: EU: support CMD_SET_CAMERA_IP" into develop-4.19
+		[+] 5e3a0a1 Merge "uvc_app: update enc code" into develop-4.19
+		[+] c2f2341 uvc: EU: support CMD_SET_CAMERA_IP
+		[+] ea577a8 uvc_app: update enc code
+		[+] 038d731 uvc-gadget:update pu val define and add zoom cmd
+		[+] 55d94f9 uvc_app: fix error when low resolution.
+		[+] ea8faa8 uvc camera: add eptz support.
+		[+] eb238d5 uvc:add support XU cmd,need driver modify
+
+	kernel changed from 624cb7b1965487a64937bc1b0f9f79382bca3fe6 to develop-4.19
+		[+] 6cea1391d22c BACKPORT: arm64: entry: Place an SB sequence following an ERET instruction
+		[+] 14b8fb9e285c media: rockchip: isp: version to v00.01.00
+
+	tools changed from e4b85d18efe414e4fb678caa4f31873aaf616f76 to master
+		[+] 74efc6c rv1126/rv1109: add package file for uvc
+
+	u-boot changed from 05431850c7c266de175d629f3338c3a67f9acfbe to next-dev
+		[+] 602b8060f1 spl: mmc: support load image depend on parameter next_stage
+
+
 
 [ rv1126_rv1109_linux_alpha_v0.3_20200612.xml ]
 	- v0.3 alpha version
