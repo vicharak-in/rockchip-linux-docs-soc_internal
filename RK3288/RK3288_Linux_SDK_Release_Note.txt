@@ -1,5 +1,5 @@
 =============RK3288 Linux SDK Release Note============
-【rk3288_linux_release_v2.2.0_20200708.xml 更新日志】
+【rk3288_linux_release_v2.2.0_20200708.xml change log】
  Kernel (4.4):
     - Upgrade to 4.4.194
         adjust bin-scaling-sel table
