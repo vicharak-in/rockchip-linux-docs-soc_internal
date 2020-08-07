@@ -1,5 +1,13 @@
 ===========RV1126/RV1109 Linux SDK Release Note===========
 
+[ rv1126_rv1109_linux_v1.2.0_20200807.xml ]
+
+	SDK update lists:
+
+	1. Firmware compatible with RV1126 and RV1109 (see Quick Start Document)
+	2. Support new EVB V13 baord (RV1126_RV1109_EVB_DDR3P216SD6_V13_20200630LXF)
+	3. Support Robot SDK
+	4. Support use C language to develop rkmedia
 
 [ rv1126_rv1109_linux_v1.1.0_20200717.xml ]
 
