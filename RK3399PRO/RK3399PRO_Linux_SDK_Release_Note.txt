@@ -1,4 +1,51 @@
 ===========RK3399PRO Linux SDK Release Note===========
+rk3399pro_linux_release_v1.3.3_20200813.xml Release Note:
+
+ - NPU
+    npu fw upgrade to v1.3.4:
+    * NPU Transfer Server: 2.0.1
+    * update rknn_server to 1.3.4(399a00a)
+    * update librknn_runtime to 1.3.4 (c18633a, ovx:44bbc5ea, 6fa8a401)
+    * ChangeLog:
+            1) Support get output tensor name (rknn_query)
+            2) Support rknn model with multiple std/scale
+            3) Refine rknn_inputs_set()
+            4) Support mish op (for yolov4)
+            5) Refine deconvolution
+            6) Bug fix
+
+- Yocto
+    - Upgrade to 3.0.3
+
+rk3399pro_linux_release_v1.3.2_20200806.xml Release Note:
+
+ Kernel (4.4):
+    - Upgrade mali t86x to r18
+    - Supoort legacy api to set propert
+
+ Support debian10:
+
+ Buildroot (2018.02-rc3):
+    - support ntfs for recovery
+    - Upgrade mali to r18.
+
+ libmali
+    - Upgrade Midgard DDK to r18p0-01rel0
+
+ docs/tools:
+    - Update recovery/Graphics document
+    - Add deviceIo Bluetooth document
+    - Add mpp/weston/chromecast/debian10 document
+    - Update Kernel/Linux/AVL/Socs/Others documents
+    - Update Linux_Upgrade_Tool: update from v1.38 to v1.49
+    - Secureboottool: update to v1.95
+    - SecurityAVB: update to v2.7
+    - Upgrade SDDiskTool to v1.62
+    - rename AndroidTool to RKDevTool, and version upgrade too v2.73
+    - Update DDR/ NAND/ eMMC AVL
+    - Remove unused documents
+    - windows: add tool for modify parameter
+
 rk3399pro_linux_release_v1.3.1_20200511.xml Release Note:
 
 Buildroot (2018.02-rc3):
