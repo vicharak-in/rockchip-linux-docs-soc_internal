@@ -1,5 +1,14 @@
 ===========RV1126/RV1109 Linux SDK Release Note===========
 
+[ rv1126_rv1109_linux_v1.3.0_20200921.xml ]
+
+	SDK update lists:
+
+	1. Update documents and ISP Tuner tool (see Quick Start Document)
+	2. Add new method to check SDK version (realpath .repo/manifests/rv1126_rv1109_linux_release.xml)
+	3. Update rkmedia's interface with C language
+	4. Add more board config (see Quick Start Document)
+
 [ rv1126_rv1109_linux_v1.2.0_20200807.xml ]
 
 	SDK update lists:
