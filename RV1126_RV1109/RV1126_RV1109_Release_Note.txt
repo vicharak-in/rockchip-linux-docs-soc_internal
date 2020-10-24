@@ -1,5 +1,38 @@
 ===========RV1126/RV1109 Linux SDK Release Note===========
 
+[ rv1126_rv1109_linux_v1.4.0_20201024.xml ]
+
+	SDK update lists:
+
+	1. mpp: support UYVY422 and YUYV422 format
+	2. rga: RGA change to new branch im2d
+	3. toolchain: resolve memory leak for libc's pthread detach
+	4. kernel: support print boot mode with watchdog reset or panic
+	5. mediaserver: fix the probability of mediaserver stream on fail
+	6. camera_engine_rkaiq: update AIQ version to V1.2.4, the detail are as follows:
+		- add gc2093/gc2053 IQ files
+		- add interface rk_aiq_uapi_sysctl_setMulCamConc
+		- awb: v1.0.a
+		- update rkisp2x_tuner to v0.2.1
+		- fix exposure error caused by wrong dcg info
+		- fix some memory leak
+		- add Iris and AF interface
+		- TMO/Dehaze: lots of modifications
+		- update isp driver version to v0.1.8
+	7. RKMedia
+	    - VENC: MJPEG: support config bitrate
+	    - VI: add God mode and support double CameraID input
+	    - OD: add interface to enable
+	    - VENC:
+		   OSD: black mentioned in front of the color table
+		   OSD: fix cache keeps growing
+		   OSD: fix alpha matching failure
+		   support jpeg light encoder api
+	    - AO: fix playback no sound and support send mediabuffer
+	    - MD: fix deinit error
+	    - RGA: add send MediaBuffer
+	    - VO: support multi-plane and support send MediaBuffer
+
 [ rv1126_rv1109_linux_v1.3.0_20200921.xml ]
 
 	SDK update lists:
