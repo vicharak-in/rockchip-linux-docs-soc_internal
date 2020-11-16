@@ -1,5 +1,15 @@
 ===========RV1126/RV1109 Linux SDK Release Note===========
 
+[ rv1126_rv1109_linux_v1.6.0_20201116.xml ]
+
+    SDK update lists:
+
+    1. Support Spi Nand and Slc Nand Boot-up
+    2. Update Linux_Upgrade_Tool V1.57 to fix Spi Nand and Slc Nand
+    3. Update RKDevTool to V2.78
+    4. Update ParameterTool to V1.1
+    5. Fix rga illegal parameter
+
 [ rv1126_rv1109_linux_v1.5.0_20201107.xml ]
 
     SDK update lists:
