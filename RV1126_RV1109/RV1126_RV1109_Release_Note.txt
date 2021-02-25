@@ -1,5 +1,407 @@
 ===========RV1126/RV1109 Linux SDK Release Note===========
 
+[ rv1126_rv1109_linux_v1.8.0_20210224.xml ]
+
+    SDK update lists:
+
+	1. system
+		- Add spi nand AB system board reference
+		- Add dual camera for thunder boot board reference
+		- Add SD card boot-up to upgrade firmware
+		- Update build app and external with build.sh
+		- Use WXInlinePlayer to update the web player
+
+    2. Docs update these:
+		- docs/Linux/Recovery/Rockchip_Developer_Guide_Linux_Upgrade_CN.pdf
+		- docs/Linux/Recovery/Rockchip_Developer_Guide_Linux_Upgrade_EN.pdf
+		- docs/Linux/Multimedia/Rockchip_Introduction_Linux_Audio_3A_Algorithm_CN.pdf
+		- docs/Linux/Multimedia/Rockchip_Introduction_Linux_Audio_3A_Algorithm_EN.pdf
+		- docs/Linux/ApplicationNote/Rockchip_Developer_Guide_Linux_Nand_Flash_Open_Source_Solution_CN.pdf
+		- docs/Linux/ApplicationNote/Rockchip_Developer_Guide_Linux_Nand_Flash_Open_Source_Solution_EN.pdf
+		- docs/RV1126_RV1109/ApplicationNote/Rockchip_Developer_Guide_Linux_UACApp_CN.pdf
+		- docs/RV1126_RV1109/ApplicationNote/Rockchip_Instruction_Linux_DVR_DMS_CN.pdf
+		- docs/RV1126_RV1109/ApplicationNote/Rockchip_Instructions_Linux_AiServer_CN.pdf
+		- docs/RV1126_RV1109/ApplicationNote/Rockchip_Instructions_Linux_DBTool_CN.pdf
+		- docs/RV1126_RV1109/ApplicationNote/Rockchip_Instructions_Linux_Smart_Display_Service_CN.pdf
+		- docs/RV1126_RV1109/ApplicationNote/Rockchip_Instructions_Linux_Web_Configuration_CN.pdf
+		- docs/RV1126_RV1109/ApplicationNote/Rockchip_Instructions_Linux_Web_Configuration_EN.pdf
+		- docs/RV1126_RV1109/ApplicationNote/Rockchip_Instructions_Qrcode_CN.pdf
+		- docs/RV1126_RV1109/ApplicationNote/Rockchip_Introduction_Linux_UVCApp_CN.pdf
+		- docs/RV1126_RV1109/Fastboot/Rockchip_Developer_Guide_RV1126_RV1109_Battery_Product_CN.pdf
+		- docs/RV1126_RV1109/Fastboot/Rockchip_Instruction_Linux_Battery_IPC_CN.pdf
+		- docs/RV1126_RV1109/Multimedia/Rockchip_Developer_Guide_Linux_RKMedia_CN.pdf
+		- docs/RV1126_RV1109/Rockchip_RV1126_RV1109_Instruction_Linux_Separate_Building_EN.pdf
+		- docs/RV1126_RV1109/Rockchip_RV1126_RV1109_Quick_Start_Linux_CN.pdf
+		- docs/RV1126_RV1109/Rockchip_RV1126_RV1109_Quick_Start_Linux_EN.pdf
+		- docs/RV1126_RV1109/Camera/Rockchip_Color_Optimization_Guide_ISP2x_CN_v1.2.1.pdf
+		- docs/RV1126_RV1109/Camera/Rockchip_Development_Guide_ISP2x_CN_v1.6.4.pdf
+		- docs/RV1126_RV1109/Camera/Rockchip_Driver_Guide_ISP2x_CN_v1.0.3.pdf
+		- docs/RV1126_RV1109/Camera/Rockchip_IQ_Tools_Guide_ISP2x_CN_v1.2.2.pdf
+		- docs/RV1126_RV1109/Camera/Rockchip_Tuning_Guide_ISP2x_CN_v1.6.2.pdf
+
+
+    3. camera_engine_rkaiq: update AIQ version to v1.0x45.4, the detail are as follows:
+		- add new iqfiles as follows:
+			- sc4238_CMK-OT1607-FV1_M12-40IRC-4MP-F16.xml
+			- sc500ai_YT10069_36IRC-5M-F10.xml
+			- gc4663_TRC-2232A6_28IRC-4M-F22-v1.0x23.xml
+			- imx307_MTV4-IR-E-P_40IRC-4MP-F16-hdr3.xml
+			- jx_f37_AXF37AA_SR2012A.xml
+			- ov02b10_AW02V05_12IRC-2M-F22.xml
+			- sc2232_sc2232-sc2310_63IRC-2M-F16.xml
+			- sc2310_sc2232-sc2310_40IR-2M-F16.xml
+		- update rkisp2x_tuner v1.3.2
+		- fix some API bugs of ahdr/adpcc/adehaze
+		- add cpie settings
+		- iq_parser: disable strict tag verification
+		- uapi: add rk_aiq_uapi_sysctl_updateIq
+		- Change mipi_rx buf type from USRPTR to DMABUF
+		- Open tmo enable function
+		- add exposure to ispparams
+		- fix aie gray_mode error of v1.023.3
+		- gen_mesh: v3.0.2
+		- calib db: v1.4.4 magic code: 1123951
+		- support socket IPC for toolserver
+		- support 3dnr motion detection and process
+		- isp driver v1.0x4.1
+		- fix stable bugs of 3ndr motion detection
+		- support RK-RAW data process
+		- support runtime debug log
+		- uApi support thread safe
+		- optimize motion detection algo
+		- motion detection stable issues
+		- system stuck issues when enable fec
+		- dump raw issues
+
+    4. rga
+		- Correct constraints resize ratio
+		- Fix the error report when scaling the coefficient
+		- Update the description of imresize in the document
+		- Fix that GraphicBuffer cannot get wstride in im2d api
+
+    6. MPP
+		- Add soc detection fucntion and mpp_service module
+		- Refactor encoder thread work flow
+		- Optimize encoder rate control and PQ tuning parameters
+		- Support rotation for jpeg enc
+
+	7. RKMedia
+		- MediaBuffer: support time-consuming statistics
+		- StressTest: add venc stress test
+		- audio: update some references for rkap algorithm
+		- buffer: add tips when open dri failed
+		- buffer: support MEDIA_BUFFER copy func
+		- c api: Cover: VI/VMIX/RGA fix param check
+		- c api: add RK_MPI_SYS_StartRecvFrame, typical for jpeg snap
+		- c api: add media buffer pool api
+		- c api: add muxer modules
+		- c api: add vmix module
+		- c api: aenc support RK_MPI_AENC_GetFd api
+		- c api: channel support frame rate config
+		- c api: enc: add RK_MPI_VENC_RGN_SetCoverEx by rga
+		- c api: enc: fix osd/cover clear invalid
+		- c api: examples: add multi-channel audio recording and playback example
+		- c api: fix jpeg osd double free error
+		- c api: fix move detection event info error
+		- c api: fix rgn set cover enable
+		- c api: fix spelling errors frome szie to size
+		- c api: fix the log interface cannot be used for test code
+		- c api: modify audio channel num from 1 to 8
+		- c api: rga module and mix module support get region luma
+		- c api: rga module and mix module support osd
+		- c api: rga module and mix module support rgn set cover
+		- c api: rga support flip
+		- c api: system initialization interface add protection
+		- c api: vdec: add h265 decoding support
+		- c api: vi support insert userdata picture
+		- c api: fix rga init RkmediaChnInitBuffer
+		- c api: jpeg/mjpeg: fullfunc: rga use buffer pool
+		- c api: vi support rgn set cover
+		- compile: fix compilation compatibility issues
+		- example: add vi_venc_rtsp demo
+		- example: electrostatic_protection
+		- example: fix compile error without aiq
+		- example: fix memery leak in rknn demo
+		- example: fix para input for isp_test
+		- example: isp common api support multi context
+		- example: StressTest: not compiled by default
+		- example: add fake camera vi test
+		- example: add more attribute settings for rkmedia_vi_venc_test
+		- example: add rkmedia_vi_uvc_test
+		- example: add rkmedia_vmix_vo_dvr_test.c
+		- example: audio: add volume api test
+		- example: fix rkmedia_vi_double_cameras_test ViPipe error
+		- example: modify double camera test scale name
+		- example: remove the dependency of the uvc example on the glib
+		- example: rkmedia_vi_double_cameras_test use vmix
+		- example: rkmedia_vi_uvc_test support uvc pu control
+		- example: rkmedia_vmix_vo_dvr_test fix bind
+		- example: rkmedia_vmix_vo_dvr_test support H264 encode
+		- example: rkmedia_vmix_vo_dvr_test support display 1 area
+		- example: rkmedia_vmix_vo_dvr_test support osd
+		- example: stress test: update rkmedia_vi_venc_change_resolution_test
+		- example: unified printing style
+		- example: unit test: fix spelling errors from uint to unit
+		- example: uvc: when VI close, we should close aiq
+		- example: venc: osd with roi protect
+		- example: vi buffer type change frome VI_CHN_BUF_TYPE_DMA to VI_CHN_BUF_TYPE_MMAP
+		- filter: anr: fix for new RKAP_ANR API
+		- fiter flow: buffer pool: buffer size align to 16
+		- fix jpeg encode iommu fault with 1080P.
+		- fix typographical confusion in printing
+		- flow: sort downflows, send to sync flow first
+		- flow: the same lower-level flow and duplicate index are not allowed
+		- media buffer: support time-consuming statistics
+		- mpp encoder: jpeg support rotation
+		- mpp encoder: jpeg/mjpeg: fix rotation does not take effect
+		- mpp encoder: jpeg/mjpeg: support osd rotation
+		- mpp encoder: osd ex: correct log information
+		- mpp encoder: standardize ROI printing log
+		- mpp venc: add new rate control features
+		- mpp venc: adjust the qp value in smartp mode
+		- muxer: fix S_STOP_SRTEAM invalid error
+		- rga: automatically adapt input format
+		- rga: support YUYV422, UYVY422
+		- rga: support dynamic modification of attributes
+		- rga: the width and height of rect can be 0
+		- rkmpp: fix sei segfault
+		- rknn: remove link between rknn_user and rockx
+		- stream: display: drm: using async commit
+		- v4l2 capture: support multiplane for debug isp
+		- venc: JPEG and JPEG-LT reuse the same interface
+		- venc: jpeg light: support osd function
+		- venc: jpeg: fix rga osd rect error
+		- venc: jpeg: support cover region
+
+	8. rknpu
+	    - Update NPU Driver to 1.6.0:
+        - update rknn_server to 1.6.0(159d2d3)
+        - update librknn_runtime to 1.6.0 (6523e57d ovx:c90f9ae, e79f447b)
+        - update npu ko, base on kernel commit
+        - Release Note:
+			- Reduce the loading time and memory usage of the pre-compiled rknn model
+			- Add new api to realize zero copy of input data.
+			- Support rknn model encryption (need to update rknn toolkit)
+
+    9. rockface
+		- RockFace SDK v1.3.7
+		- all models adapt to 1.5.0 rknn driver
+		- support face recognition with mask
+
+    10. rockx
+		- add ROCKX_MODULE_FACE_DETECTION_V2_HORIZONTAL for horizontal image
+		- add ROCKX_MODULE_HEAD_DETECTION_V2
+		- add rockx_face_capture_demo
+		- add rockx_face_quality for face quality filter
+		- add rockx_face_blur_ipc
+		- add rockx_person_detect2
+		- update person_detection_v2.data
+		- update ROCKX_MODULE_FACE_DETECTION_V2 model
+
+	11. kernel
+		- ARM: configs: Add rv1126-uvc-ramboot.config
+		- ARM: configs: rv1126_defconfig: CONFIG_CMA_ALIGNMENT = 0
+		- ARM: configs: rv1126_defconfig: add CONFIG_ROCKCHIP_CLK_COMPENSATION
+		- ARM: dts: add rv1126-evb-ddr3-v13-dualcam-tb-emmc.dts
+		- ARM: dts: add rv1126-evb-ddr3-v13-uvc.dts
+		- ARM: dts: rockchip: make the empty node of gmac not empty for rv1126-thunder-boot
+		- ARM: dts: rockchip: rv1126: Enable 934MHz for npu
+		- ARM: dts: rv1126: Add 25mV for CPU 1200MHz
+		- ARM: dts: rv1126: Add opp table for low performance chips
+		- ARM: dts: rv1126: Add pvtm config for cpu opp table
+		- ARM: dts: rv1126: Add pvtm config for npu opp table
+		- ARM: dts: rv1126: Chage grf to pmugrf for pmucru
+		- ARM: dts: rv1126: isp add iommu node
+		- ARM: dts: rv1126: spi nor: modify rootfs mtd block number
+		- ARM: dts: rv1126: uvc: fix cpll to 491520000
+		- ASoC: rockchip: i2s-tdm: Add support for half frame fsync
+		- ASoC: rockchip: i2s-tdm: Shift rate back to 0 ppm when restart
+		- ASoC: rockchip: i2s: Add support for clk compensation
+		- ASoC: rockchip: i2s: Shift rate back to 0 ppm when restart
+		- ASoC: rockchip: i2s_tdm: Add support for clk compensation
+		- ASoC: rockchip: pdm: Add support for clk compensation
+		- ASoC: rockchip: pdm: Add support for path map
+		- ASoC: rockchip: pdm: Shift rate back to 0 ppm when restart
+		- ASoC: rockchip: rk817-codec: Fix the 8/16kHz noise dues to incorret configurations
+		- Revert "HACK: media: videobuf2: allow cache hints on all memory types"
+		- Revert "media: rockchip: isp: set lgmean related regs for tmo in hdr isr"
+		- Revert "media: rockchip: ispp: check frame id when apply params"
+		- UBI: Force write recheck
+		- clk/rockchip/regmap: pll: fix integer overflow in clk_pll_round_rate
+		- clk/rockchip/regmap: pll: fix integer overflow in frac rate calculation
+		- clk/rockchip/regmap: pll: limit postdiv2 max value
+		- clk/rockchip/rk618: Add codec fractional divider support
+		- clk/rockchip/rk618: composite: allow fractional divider
+		- clk/rockchip/rk618: rename directory to "regmap"
+		- clk/rockchip/rk618: support for fractional divider
+		- clk: rockchip: Add support for clk compensation
+		- clk: rockchip: pll: Fix overflow on frac caculation
+		- clk: rockchip: rv1126: Better jitter performance for audio rate
+		- cma: decrease CMA_ALIGNMENT lower limit to 0
+		- cpufreq: rockchip: Implement get_soc_info() for rv1126 SoCs
+		- dma-buf: add buf proc debug node
+		- dmaengine: pl330: Fix burst length if burst size is smaller than bus width
+		- driver: media: i2c: add os02g10 driver
+		- drivers: media: i2c: nvp6188: add get stream sequence interface
+		- drivers: media: platform: rockchip: cif: restruct cif reset monitor
+		- drivers: rkflash: Add block protect for GD5F1GQ5UEYIG
+		- drivers: rkflash: Add spinand program cache recheck
+		- drivers: rkflash: Adjust spinor mtd dev dma limit to 8KB
+		- drivers: rkflash: Fixed bbt operation calculation error
+		- drivers: rkflash: Remove RK vendor support for spinor mtd case
+		- drivers: rkflash: Remove cache bitflip detect 2
+		- drivers: rkflash: Support new spi flash
+		- drivers: rkflash: Support new spinor
+		- drivers: rkflash: Support sfc DLL api
+		- drivers: rkflash: Support spinor prog_addr_lines
+		- drivers: rkflash: Wait for SFC DMA finished when thunder boot
+		- drivers: rkflash: fixes compile error when !CONFIG_MTD
+		- dt-bindings: media: Add bindings for OV12D2Q
+		- dt-bindings: media: Add bindings for OV2775
+		- dt-bindings: media: i2c: Document add gc2053
+		- dt-bindings: media: i2c: Document add gc2093
+		- dt-bindings: sound: i2s-tdm: Document property 'tdm-fsync-half-frame'
+		- dt-bindings: sound: pdm: Document property 'rockchip,path-map'
+		- dt-bindings: sound: rockchip: i2s: Document property 'mclk-calibrate'
+		- dt-bindings: sound: rockchip: pdm: Document property 'mclk-calibrate'
+		- fiq_debugger_arm: Print real address instead of hashed address
+		- media: cif: add stream sequence conifg strategy
+		- media: i2c: add gc4663 driver
+		- media: i2c: add nvp6188 driver
+		- media: i2c: add sc430cs driver
+		- media: i2c: add sc500ai driver
+		- media: i2c: add soi jx_h62 sensor driver
+		- media: i2c: add tp2855 driver
+		- media: i2c: fix sc500ai exposure time error
+		- media: i2c: imx327 fixed linear mode exposure calculation
+		- media: i2c: jx_f37 support mirror/flip
+		- media: i2c: nvp6188: Improve more interfaces to adapt to 8 channels
+		- media: i2c: sc200ai: fix bug for 1x dgain error
+		- media: i2c: sc200ai: fix set hflip/vflip failed bug
+		- media: i2c: sc2310: fix bug for gain function error
+		- media: i2c: sc2310: fix the bug of switching hdr
+		- media: i2c: sc4232 fixed 2688x1520 linear 10bit to 25fps
+		- media: i2c: sc4238 fixed hdr exposure issue
+		- media: i2c: sc4238 support 2688x1520@30fps 10bit linear mode
+		- media: i2c: sc4238 support digital gain
+		- media: i2c: sc500ai output 2880*1616 resolution image
+		- media: i2c: support ov12d2q camera driver
+		- media: i2c: support ov2775 camera driver
+		- media: rockchip: cif: add dvp sof
+		- media: rockchip: cif: extend line to fix merge bypass bug for isp20
+		- media: rockchip: cif: vb2 dma sg for iommu enable
+		- media: rockchip: isp/ispp add dma contiguous attrs
+		- media: rockchip: isp/ispp add vb2_rdma_sg_memops to support contiguous page
+		- media: rockchip: isp/ispp fix config of clk_dbg
+		- media: rockchip: isp/ispp get vaddr in buf queue
+		- media: rockchip: isp/ispp set core clk to low freq if no stream output
+		- media: rockchip: isp/ispp to version v1.2.2
+		- media: rockchip: isp/ispp to version v1.3.0
+		- media: rockchip: isp/ispp to version v1.4.1
+		- media: rockchip: isp/ispp: fix error detected by depmod
+		- media: rockchip: isp/ispp: release ldch/fec buffer when close video
+		- media: rockchip: isp/ispp: support motion detection mode
+		- media: rockchip: isp/ispp: support output isp/ispp reg on each frame
+		- media: rockchip: isp: 64 align y size for fbcgain format
+		- media: rockchip: isp: add force update to enable dehaze
+		- media: rockchip: isp: add get awb data from ddr function
+		- media: rockchip: isp: add head file for isp21
+		- media: rockchip: isp: add ioctl to get share buffer fd
+		- media: rockchip: isp: add isp21
+		- media: rockchip: isp: capture to different version
+		- media: rockchip: isp: config dmatx to valid buf addr
+		- media: rockchip: isp: config lsc by sram in rdbk mode
+		- media: rockchip: isp: extend line to fix merge bypass bug for isp20
+		- media: rockchip: isp: fix array overflow
+		- media: rockchip: isp: fix bug of scheduling while atomic
+		- media: rockchip: isp: fix can not get correct awb rawdata
+		- media: rockchip: isp: fix dmatx width err for yuv422 format
+		- media: rockchip: isp: fix enable function of ynr/cnr/bay3d/dhaz/adrc is not correct
+		- media: rockchip: isp: fix extend line with isp input crop case
+		- media: rockchip: isp: fix frame id error for isp21
+		- media: rockchip: isp: fix gain buf update
+		- media: rockchip: isp: fix lsc lut error in start/stop test
+		- media: rockchip: isp: fix media link err for name don't match
+		- media: rockchip: isp: fix mpfbc buf update if readback off
+		- media: rockchip: isp: fix path select of cif input
+		- media: rockchip: isp: fix setting drc register is not correct
+		- media: rockchip: isp: get stats only when meas done is on
+		- media: rockchip: isp: remove hdrtmo to fix crash when connect to yuv sensor
+		- media: rockchip: isp: remove rx enable config
+		- media: rockchip: isp: reorder of subdev stream
+		- media: rockchip: isp: set lgmean related regs for tmo in hdr isr
+		- media: rockchip: isp: support iq feature setting
+		- media: rockchip: isp: support iq part of isp21
+		- media: rockchip: isp: support to set format if no streaming
+		- media: rockchip: isp: vb2 dma sg for iommu enable
+		- media: rockchip: ispp: add trigger mode ioctl
+		- media: rockchip: ispp: add virtual video for iqtool
+		- media: rockchip: ispp: check frame id when apply params
+		- media: rockchip: ispp: check scl stop if fec enable
+		- media: rockchip: ispp: dummy buf map to one page if iommu enable
+		- media: rockchip: ispp: fec extend to independent video
+		- media: rockchip: ispp: fix compile error in rkispp_compat_ioctl32
+		- media: rockchip: ispp: fix panic for vmap at interrupt
+		- media: rockchip: ispp: limit min clk to 50
+		- media: rockchip: ispp: reduce buf count
+		- media: rockchip: ispp: remove debug log
+		- media: rockchip: ispp: sync to free buf for multi dev stream off
+		- media: rockchip: ispp: vb2 dma sg for iommu enable
+		- media: sensor: imx307: support 60fps linear mode
+		- mmc: core: sdio: support cypress chips for keepalive
+		- net: ipv4: support tcp_get_ext_info for sdio keepalive
+		- net: rfkill-wlan: fixes WARN if WIFI,poweren_gpio is not assigned
+		- phy: phy-core: remove mutex lock for rockchip rv1126-usb2phy calibrate
+		- pinctrl: rockchip: clear pendings before isr_handler is valid
+		- power: reset: reboot-mode: Register callback for kernel pre restart
+		- reboot: Introduce kernel pre restart handler call chain
+		- rtc: rtc-rk808: use flag to distinguish chip differences
+		- soc: rockchip: mtd_vendor_storage: Erase block in initial progress
+		- soc: rockchip: mtd_vendor_storage: Save the initialization result to flash
+		- soc: rockchip: mtd_vendor_storage: fix write issue
+		- soc: rockchip: opp_select: Add support to select voltage accroding to bin
+		- soc: rockchip: opp_select: Fix division by zero warning
+		- soc: rockchip: thunderboot_sfc: Change to wait for SFC idle
+		- spi: rockchip: Set rx_fifo interrupt waterline base on transfer item
+		- spi: rockchip: Support SPI_CS_HIGH
+		- spi: rockchip: Support cs-gpio
+		- spi: rockchip: Wait for STB status in slave mode tx_xfer
+		- ubifs: Recovery for cases of unclean reboot
+		- usb: dwc3: gadget: disable lpm for rockchip platform
+		- usb: dwc3: gadget: rework the tx fifos resize
+		- usb: gadget: add transfer_type in struct usb_ep for rockchip
+		- usb: gadget: f_fs: fix ep req_match error for composite device
+		- usb: gadget: f_uac: update maxpacket in function bind
+		- usb: gadget: u_audio: add uevent for ppm compensation
+		- video/rockchip: rga2: Add support for BGRX8888
+		- video/rockchip: rga2: Fix a crash cause by rga timeout.
+		- video/rockchip: rga2: Fix errors in Y4/Y400 format.
+		- video/rockchip: rga2: Fix the memory leak in rga2 driver.
+		- video/rockchip: rga2: Ion can be used below kernel4.4.
+		- video/rockchip: rga2: Modify the format of YUYV and RGB565.
+		- video/rockchip: rga2: Modify the initial value of ktime_t.
+		- video/rockchip: rga2: Modify the judgment of first req.
+		- video/rockchip: rga2: Some new features of Alpha mode.
+		- video/rockchip: rga2: fixup black slash when use rgb888 output with odd width
+		- video: rockchip: mpp: Fix irq state err.
+		- video: rockchip: mpp: add query hw_id via client_type
+		- video: rockchip: mpp: add register for rkvenc translate table
+		- video: rockchip: mpp: common: Add hardware register dump
+		- video: rockchip: mpp: optimize power for video codec
+		- video: rockchip: mpp: rkvenc issue for devfreq is null
+		- video: rockchip: mpp: rkvenc: Implement get_soc_info() for rv1126 SoCs
+		- video: rockchip: mpp: rkvenc: fix writing error
+		- video: rockchip: mpp: rkvenc: reg_l2 register debug info
+
+	12. tools
+		- windows: update factorytool to V1.71.200
+		- windows: RKDevTool: update to V2.81
+		- linux: add programmer_image_tool
+
+	13. u-boot
+		- add iomux config for sd card boot
+		- support watchdog
+
 [ rv1126_rv1109_linux_v1.7.0_20201210.xml ]
 
     SDK update lists:
